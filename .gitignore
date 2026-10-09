@@ -6,3 +6,4 @@ themes/
 auth.json
 trust.json
 models-store.json
+__pycache__/
