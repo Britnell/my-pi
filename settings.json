@@ -1,0 +1,45 @@
+{
+  "lastChangelogVersion": "1.0.4",
+  "defaultProvider": "zai-coding-cn",
+  "defaultModel": "glm-5.3",
+  "defaultThinkingLevel": "low",
+  "theme": "dark",
+  "enabledModels": [
+    "zai-coding-cn/glm-5.3",
+    "deepseek/deepseek-v4-pro"
+  ],
+  "packages": [
+    {
+      "source": "npm:pi-subagents",
+      "skills": [
+        "!skills/council-mode/**",
+        "!council-mode/**"
+      ],
+      "prompts": [
+        "!prompts/council.md",
+        "!council.md"
+      ]
+    }
+  ],
+  "subagents": {
+    "agentOverrides": {
+      "oracle": {
+        "disabled": true
+      },
+      "evidence-auditor": {
+        "disabled": true
+      },
+      "delegate": {
+        "disabled": true
+      },
+      "reviewer": {
+        "disabled": true
+      },
+      "worker": {
+        "disabled": true
+      }
+    },
+    "disableBuiltins": true
+  },
+  "hideThinkingBlock": false
+}

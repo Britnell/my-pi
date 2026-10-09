@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# url2md - fetch a URL and convert its HTML to Markdown
+#
+# usage: url2md <url> [extra html2text options...]
+#   e.g. url2md https://example.com --ignore-images
+
+set -euo pipefail
+
+if [[ $# -lt 1 ]]; then
+    echo "usage: $(basename "$0") <url> [html2text options...]" >&2
+    exit 1
+fi
+
+url="$1"
+shift
+
+html=$(curl -fsSL "$url")
+md=$(printf '%s' "$html" | html2text --body-width=0 --ignore-images "$@")
+
+printf '%s\n' "$md"
+
+# debug stats (stderr so they don't end up in redirected output)
+html_len=$(printf '%s' "$html" | wc -c)
+md_len=$(printf '%s' "$md" | wc -c)
+reduction=$(awk "BEGIN {printf \"%.1f\", (1 - $md_len / $html_len) * 100}")
+printf '[debug] html: %s bytes → md: %s bytes (%s%% smaller)\n' \
+    "$(numfmt --grouping "$html_len")" \
+    "$(numfmt --grouping "$md_len")" \
+    "$reduction" >&2

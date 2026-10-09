@@ -1,0 +1,8 @@
+sessions/
+npm/
+missions/
+themes/
+
+auth.json
+trust.json
+models-store.json
