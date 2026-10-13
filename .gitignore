@@ -3,7 +3,11 @@ npm/
 missions/
 themes/
 
+
 auth.json
 trust.json
 models-store.json
+crashes.json 
+run-history.jsonl
+
 __pycache__/

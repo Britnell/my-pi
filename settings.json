@@ -6,7 +6,8 @@
   "theme": "dark",
   "enabledModels": [
     "zai-coding-cn/glm-5.3",
-    "deepseek/deepseek-v4-pro"
+    "deepseek/deepseek-v4-pro",
+    "deepseek/deepseek-flash"
   ],
   "packages": [
     {
@@ -30,9 +31,6 @@
         "disabled": true
       },
       "delegate": {
-        "disabled": true
-      },
-      "reviewer": {
         "disabled": true
       },
       "worker": {

@@ -18,5 +18,6 @@ Rules:
 - Read the assigned files first; match existing code patterns.
 - Keep changes minimal and complete — no placeholder code or TODOs.
 - If anything is ambiguous or a decision is required, stop and report it clearly in your final response.
+- If you changed or touched any code, run the TypeScript checker (`tsc` / `npx tsc --noEmit` or the project's typecheck script) once before finishing.
 - Verify the result when possible (run relevant checks via bash).
 - Final response: "changes made: [file paths]" — nothing more if all went as instructed. Add one sentence if something unexpected came up. Longer reply only for real obstacles.

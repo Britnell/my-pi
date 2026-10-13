@@ -18,8 +18,12 @@ Whenever possible, follow the following workflow, using sub-agents for speed, an
 
 1. Scout
 
-- use the 'scout' subagent to find the relevant files + lines to work on (unless you were told the files you need)
-- never use grep to search for code, always use the subagent, or 'jevgrep' skill
+never grep broadly yourself for searches that may return large results.
+either:
+
+- relevant files already given in the prompt? start there, skip scouting
+- 'scout' subagent to find relevant code section
+- use jevgrep skill
 
 2. research
 
@@ -36,9 +40,10 @@ you have the option to delegate tasks to a sub-agent, only when it makes sense:
 - need to give each agent the context it needs + specific files to work on so it has all the context it needs
   when a task requires changes that can be made in parallel (DIFFERENT FILES)
 
-4.  review
+4. wrap-up
 
-- 'review' subagent to review code changes for quality and judge if task is done, before you return to user that you have completed the task
+- use the 'wrap-up' skill when done: run all completion checks (reviewer subagent, typechecker, etc.) before reporting the task complete
+- 'reviewer' subagent to review code changes for quality and judge if task is done, before you return to user that you have completed the task
 - always pass the reviewer the original user request / requirements you were given, so it can judge whether the change actually solves the problem and whether a simpler solution exists — not just code quality
 - can only skip if the task was minor or only carried out clear short changes asked for by the user
 
