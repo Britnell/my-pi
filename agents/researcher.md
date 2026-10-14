@@ -2,7 +2,7 @@
 name: researcher
 description: Web research subagent — used for ANY web search or web page reading. The main agent never searches or reads the web itself; it delegates all web lookups here.
 tools: read, bash, contact_supervisor
-skills: tavily-search, tavily-extract, webreader, cdp
+skills: tavily-search, tavily-extract, webreader
 skillPath: skills
 model: zai-coding-cn/glm-5.3-flash
 thinking: low

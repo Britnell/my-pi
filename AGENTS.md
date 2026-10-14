@@ -40,13 +40,18 @@ you have the option to delegate tasks to a sub-agent, only when it makes sense:
 - need to give each agent the context it needs + specific files to work on so it has all the context it needs
   when a task requires changes that can be made in parallel (DIFFERENT FILES)
 
-4. wrap-up
+4. Debugging (browser)
 
+- use the 'browser' subagent for all browser tasks: debugging problems, reading frontend state, UI verification, console errors, navigation, forms, screenshots
+- when something is not working: add console logs, have the browser subagent read them
+- never use playwright-cli yourself; only the 'browser' subagent uses it
+
+5. wrap-up
 - use the 'wrap-up' skill when done: run all completion checks (reviewer subagent, typechecker, etc.) before reporting the task complete
 - 'reviewer' subagent to review code changes for quality and judge if task is done, before you return to user that you have completed the task
 - always pass the reviewer the original user request / requirements you were given, so it can judge whether the change actually solves the problem and whether a simpler solution exists — not just code quality
 - can only skip if the task was minor or only carried out clear short changes asked for by the user
 
-5. voice reply
+6. voice reply
 
 Use the voice-mode skill: speak a very short summary after each task completed, or when feedback is required for completing a task.
